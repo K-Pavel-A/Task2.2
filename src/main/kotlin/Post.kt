@@ -1,0 +1,26 @@
+data class Post(
+    val id: Int = 1,
+    val ownerId: Int = 1,
+    val fromId: Int = 1,
+    val createdBy: Int = 1,
+    val date: Int = 1,
+    val text: String = "",
+    val replyOwnerId: Int = 1 ,
+    val replyPostId: Int = 1,
+    val friendsOnly: Boolean = true,
+    val comments: Comments,
+    val copyright: String = "",
+    val likes: Likes,
+    val reposts: Reposts,
+    val viewsCount: Int = 1,
+    val postType: String = "",
+    val signerId: Int = 1,
+    val canPin: Boolean = true,
+    val canDelete: Boolean = true,
+    val canEdit: Boolean = true,
+    val isPinned: Boolean = true,
+    val markedAsAds: Boolean = true,
+    val isFavorite: Boolean = true,
+    val postponedId: Int = 1
+)
+
