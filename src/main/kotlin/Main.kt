@@ -84,4 +84,5 @@ fun main() {
     wall.add(post3)
 
     wall.update(post1)
+    val newAudio = Audio()
 }
