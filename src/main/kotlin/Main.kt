@@ -84,5 +84,7 @@ fun main() {
     wall.add(post3)
 
     wall.update(post1)
-    val newAudio = Audio()
+    val newComment = Comments(5,true,true,true,false)
+
+    wall.createComment(1, newComment)
 }

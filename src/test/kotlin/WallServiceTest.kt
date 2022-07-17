@@ -158,4 +158,39 @@ class WallServiceTest {
         val result = wall.update(update)
         assertFalse(result)
     }
+
+    @Test(expected = WallService.PostNotFoundException::class)
+    fun createCommentTest_Exception(){
+        val wall = WallService()
+        val testPost = Post(
+            id = 1,
+            ownerId = 666,
+            fromId = 111,
+            createdBy = 5656,
+            date = 12042022,
+            text = "Sun shine and it is okey",
+            replyOwnerId = 7890,
+            replyPostId = 2346,
+            friendsOnly = false,
+            comments = Comments(count = 18, canPost = true, groupsCanPost = false, canClose = true, canOpen = true),
+            copyright = "newspaper Pravda",
+            likes = Likes(count = 25, userLikes = true, canLike = false, canPublish = true),
+            reposts = Reposts(count = 3, userReposted = true),
+            viewsCount = 15,
+            postType = "post",
+            signerId = 8965,
+            canPin = true,
+            canDelete = true,
+            canEdit = true,
+            isPinned = true,
+            markedAsAds = false,
+            isFavorite = true,
+            postponedId = 0
+        )
+        wall.add(testPost)
+        val testId = 2
+        val testComment = Comments(5,true,true,true,false)
+        wall.createComment(testId,testComment)
+    }
+
 }

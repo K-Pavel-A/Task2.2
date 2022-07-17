@@ -1,6 +1,7 @@
 class WallService {
 
     private var posts = emptyArray<Post>()
+    private var commentsArray = emptyArray<Comments>()
 
     fun add(post: Post): Post {
 
@@ -23,5 +24,29 @@ class WallService {
         }
         return change
     }
+
+    fun createComment(postId: Int, comments: Comments): Comments {
+//        try{
+//            commentsArray += comments
+//            return commentsArray.last()
+//        } catch (e:PostNotFoundException){
+//            println("Post not exist")
+//        }
+
+//        try {
+            for ((index, value) in posts.withIndex()) {
+                    if (value.id == postId) {
+                        commentsArray += comments
+                        break
+                    } else {throw PostNotFoundException() }
+                }
+//            } catch (e: PostNotFoundException) {
+//            println("Пост не найден")
+//        }
+//        return result
+        return commentsArray.last()
+    }
+
+    class PostNotFoundException:Exception()
 
 }
