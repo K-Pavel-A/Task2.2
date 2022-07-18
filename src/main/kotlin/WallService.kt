@@ -26,12 +26,12 @@ class WallService {
     }
 
     fun createComment(postId: Int, comments: Comments): Comments {
+        var compare : Boolean = false
             for ((index, value) in posts.withIndex()) {
-                    if (value.id == postId) {
-                        commentsArray += comments
-                        break
-                    } else {throw PostNotFoundException() }
+                    if (value.id == postId) compare = true else false
                 }
+        if (compare) commentsArray += comments else throw PostNotFoundException()
+
         return commentsArray.last()
     }
 

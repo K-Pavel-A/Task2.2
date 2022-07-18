@@ -86,5 +86,5 @@ fun main() {
     wall.update(post1)
     val newComment = Comments(5,true,true,true,false)
 
-    wall.createComment(1, newComment)
+    wall.createComment(2, newComment)
 }

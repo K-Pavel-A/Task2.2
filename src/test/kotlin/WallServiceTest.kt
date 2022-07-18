@@ -163,7 +163,7 @@ class WallServiceTest {
     fun createCommentTest_Exception(){
         val wall = WallService()
         val testPost = Post(
-            id = 1,
+            id = 5,
             ownerId = 666,
             fromId = 111,
             createdBy = 5656,
